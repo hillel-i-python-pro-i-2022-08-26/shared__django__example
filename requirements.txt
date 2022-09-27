@@ -1,0 +1,16 @@
+# Core
+django==4.1.1
+
+# Name generating
+faker==15.0.0
+
+# [code_style]-[BEGIN]
+# Pre-commit hook.
+pre-commit==2.20.0
+# Upgrade syntax.
+pyupgrade==2.38.2
+# Formatter. Apply codestyle.
+black==22.8.0
+# Check codestyle
+flake8==5.0.4
+# [code_style]-[END]
