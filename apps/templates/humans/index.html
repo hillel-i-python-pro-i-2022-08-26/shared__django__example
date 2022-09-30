@@ -1,0 +1,12 @@
+{% extends '_helpers/_base.html' %}
+
+{% block content %}
+    <div>
+        <h2>Humans</h2>
+        <ol>
+            {% for human in humans %}
+                <li>{{ human.name }} - {{ human.age }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% if title %}
+            {{ title }}
+        {% else %}
+            Something
+        {% endif %}
+        | My site
+    </title>
+</head>
+<body>
+{% include '_helpers/_header.html' %}
+
+{% block content %}
+    Hello!
+{% endblock %}
+</body>
+</html>
