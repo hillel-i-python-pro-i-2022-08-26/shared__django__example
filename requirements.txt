@@ -4,6 +4,9 @@ django==4.1.1
 # Name generating
 faker==15.0.0
 
+# For better parsing args from query part from URL
+webargs==8.2.0
+
 # [code_style]-[BEGIN]
 # Pre-commit hook.
 pre-commit==2.20.0
