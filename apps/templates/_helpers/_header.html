@@ -1,0 +1,13 @@
+<header>
+    <ul>
+        <li>
+            <a href="{% url 'index' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'password_generator:index' password_length=10 %}">Password generator</a>
+        </li>
+        <li>
+            <a href="{% url 'humans:index' %}">Humans</a>
+        </li>
+    </ul>
+</header>
