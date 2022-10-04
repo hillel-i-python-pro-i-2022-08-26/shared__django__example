@@ -20,5 +20,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("password-generator/", include("apps.password_generator.urls")),
     path("humans/", include("apps.humans.urls")),
+    path("animals/", include("apps.animals.urls")),
     path("", include("apps.base.urls")),
 ]

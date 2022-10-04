@@ -1,0 +1,12 @@
+{% extends '_helpers/_base.html' %}
+
+{% block content %}
+    <div>
+        <h2>Animals</h2>
+        <ol>
+            {% for animal in animals %}
+                <li>{{ animal.name }} - {{ animal.age }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endblock %}
