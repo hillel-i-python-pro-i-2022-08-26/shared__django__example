@@ -26,3 +26,15 @@ pre-commit-run:
 # Run tools for all files.
 pre-commit-run-all:
 	@pre-commit run --all-files
+
+
+
+.PHONY: migrations
+# Make migrations
+migrations:
+	@python manage.py makemigrations
+
+.PHONY: migrate
+# Migrate
+migrate:
+	@python manage.py migrate
