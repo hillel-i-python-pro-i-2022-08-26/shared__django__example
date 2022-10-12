@@ -21,5 +21,6 @@ urlpatterns = [
     path("password-generator/", include("apps.password_generator.urls")),
     path("humans/", include("apps.humans.urls")),
     path("animals/", include("apps.animals.urls")),
+    path("sessions-example/", include("apps.sessions_example.urls")),
     path("", include("apps.base.urls")),
 ]

@@ -43,6 +43,7 @@ LOCAL_APPS = [
     "apps.password_generator.apps.PasswordGeneratorConfig",
     "apps.humans.apps.HumansConfig",
     "apps.animals",
+    "apps.users",
 ]
 
 THIRD_PARTY_APPS = []
@@ -60,6 +61,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "core.urls"
+
+AUTH_USER_MODEL = "users.User"
 
 TEMPLATES = [
     {
