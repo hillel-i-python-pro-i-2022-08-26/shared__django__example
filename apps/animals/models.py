@@ -3,8 +3,13 @@ from django.db import models
 from apps.animals.typing import T_NAME
 
 
-# class Group(models.Model):
-#     name = models.CharField(max_length=100)
+class Group(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self) -> str:
+        return self.name
+
+    __repr__ = __str__
 
 
 class Animal(models.Model):
@@ -16,7 +21,14 @@ class Animal(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
 
-    # group = models.ForeignKey(Group, related_name='animals', on_delete=models.CASCADE)
+    group = models.ForeignKey(
+        Group,
+        related_name="animals",
+        on_delete=models.CASCADE,
+        default=None,
+        blank=True,
+        null=True,
+    )
 
     def __str__(self) -> str:
         return f"{self.name} - {self.age}"
