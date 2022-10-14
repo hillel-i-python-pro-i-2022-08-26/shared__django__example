@@ -16,6 +16,8 @@ class Animal(models.Model):
     name: T_NAME = models.CharField(max_length=100)
     age = models.PositiveSmallIntegerField()
 
+    date = models.DateField(null=True, blank=True, default=None)
+
     is_auto_generated = models.BooleanField(default=False)
 
     created_at = models.DateTimeField(auto_now_add=True)
