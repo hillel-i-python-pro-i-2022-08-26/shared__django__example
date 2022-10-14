@@ -10,11 +10,13 @@ from apps.humans.services import generate_humans
 def get_humans(request: HttpRequest, args) -> HttpResponse:
     amount = args["amount"]
 
+    humans = generate_humans(amount=amount)
+
     return render(
         request,
         "humans/index.html",
         {
-            "humans": generate_humans(amount=amount),
+            "humans": humans,
             "title": "Humans",
         },
     )

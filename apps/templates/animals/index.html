@@ -5,7 +5,16 @@
         <h2>Animals</h2>
         <ol>
             {% for animal in animals %}
-                <li>{{ animal.name }} - {{ animal.age }}</li>
+                <li>
+                    <span>{{ animal.name }}</span>
+                    <span> - </span>
+                    <span>{{ animal.age }}</span>
+                    <a href="{% url 'animals:edit' pk=animal.pk %}">
+                        <button>
+                            Edit
+                        </button>
+                    </a>
+                </li>
             {% endfor %}
         </ol>
     </div>
