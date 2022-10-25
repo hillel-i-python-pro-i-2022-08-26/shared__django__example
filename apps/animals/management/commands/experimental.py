@@ -17,3 +17,4 @@ class Command(BaseCommand):
         group = models.Group.objects.first()
 
         related_animals = group.animals.all()
+        self.logger.info(related_animals)

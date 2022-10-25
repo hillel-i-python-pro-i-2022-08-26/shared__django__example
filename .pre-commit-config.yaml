@@ -1,18 +1,54 @@
 repos:
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v2.38.0
+  - repo: local
     hooks:
       - id: pyupgrade
+        name: pyupgrade
+        entry: pyupgrade
         args: [
           "--py310-plus"
         ]
+        language: system
+        exclude: |
+          (?x)^(
+              .*/docker/.*|
+              .*/rpc/generatedrpc/.*
+          )$
+        types:
+          - python
 
-  - repo: https://github.com/psf/black
-    rev: 22.8.0
-    hooks:
+      - id: autoflake
+        name: autoflake
+        entry: autoflake
+        language: system
+        exclude: |
+          (?x)^(
+              .*/docker/.*|
+              .*/rpc/generatedrpc/.*|
+              .*/__init__.py
+          )$
+        types:
+          - python
+
       - id: black
-        # It is recommended to specify the latest version of Python
-        # supported by your project here, or alternatively use
-        # pre-commit's default_language_version, see
-        # https://pre-commit.com/#top_level-default_language_version
-        language_version: python3.10
+        name: black
+        entry: black
+        language: system
+        exclude: |
+          (?x)^(
+              .*/docker/.*|
+              .*/rpc/generatedrpc/.*
+          )$
+        types:
+          - python
+
+      - id: flake8
+        name: flake8
+        entry: flake8
+        language: system
+        exclude: |
+          (?x)^(
+              .*/docker/.*|
+              .*/rpc/generatedrpc/.*
+          )$
+        types:
+          - python

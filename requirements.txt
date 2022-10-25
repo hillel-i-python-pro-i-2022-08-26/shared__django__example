@@ -11,9 +11,11 @@ webargs==8.2.0
 # Pre-commit hook.
 pre-commit==2.20.0
 # Upgrade syntax.
-pyupgrade==2.38.2
+pyupgrade==3.1.0
 # Formatter. Apply codestyle.
-black==22.8.0
+black==22.10.0
 # Check codestyle
 flake8==5.0.4
+# Removes unused imports and unused variables
+autoflake==1.7.7
 # [code_style]-[END]
