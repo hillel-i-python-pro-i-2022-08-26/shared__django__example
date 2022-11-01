@@ -163,3 +163,5 @@ db/*
 !db/.gitkeep
 
 docker-compose.override.yml
+
+staticfiles/

@@ -3,17 +3,21 @@
 {% block content %}
     <div>
         <h2>Animals</h2>
-        <ol>
+        <ol class="my-custom-list">
             {% for animal in animals %}
-                <li>
-                    <span>{{ animal.name }}</span>
-                    <span> - </span>
-                    <span>{{ animal.age }}</span>
-                    <a href="{% url 'animals:edit' pk=animal.pk %}">
-                        <button>
-                            Edit
-                        </button>
-                    </a>
+                <li class="my-element-style">
+                    <div>
+                        <div class="col">
+                            <span>{{ animal.name }}</span>
+                            <span> - </span>
+                            <span>{{ animal.age }}</span>
+                            <a href="{% url 'animals:edit' pk=animal.pk %}">
+                                <button class="btn btn-primary">
+                                    Edit
+                                </button>
+                            </a>
+                        </div>
+                    </div>
                 </li>
             {% endfor %}
         </ol>
