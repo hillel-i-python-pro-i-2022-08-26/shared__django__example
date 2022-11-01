@@ -1,0 +1,61 @@
+.my-header {
+    display: flex;
+    flex-flow: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 2em;
+    height: 2em;
+}
+
+.logo > img {
+    width: 2em;
+    height: 2em;
+}
+
+.my-element-style {
+    width: fit-content;
+
+    border-radius: 5px;
+    border: 1px solid blue;
+
+    margin: .5em;
+    padding: .2em;
+
+    background-color: #eaeaea;
+    text-shadow: 1px 1px 2px white;
+
+    box-shadow: 0.1em 0.1em 0.5em rgb(0 0 255 / 50%);
+}
+
+.my-element-style:hover {
+    box-shadow: 0.1em 0.1em 0.1em rgb(0 0 255 / 50%);
+}
+
+.my-custom-list {
+    display: flex;
+    /*flex-flow: row;*/
+    flex-flow: column-reverse;
+    flex-wrap: wrap;
+}
+
+.my-custom-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-wrapper .main-content {
+    flex: 1;
+    display: flex;
+}

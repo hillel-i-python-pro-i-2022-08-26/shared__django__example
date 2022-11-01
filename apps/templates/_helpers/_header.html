@@ -1,19 +1,24 @@
-<header>
-    <ul>
-        <li>
-            <a href="{% url 'index' %}">Home</a>
+{% load static %}
+
+<header class="my-header">
+    <div class="logo">
+        <img src="{% static "images/logo.svg" %}" />
+    </div>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
         </li>
-        <li>
-            <a href="{% url 'password_generator:index' password_length=10 %}">Password generator</a>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'password_generator:index' password_length=10 %}">Password generator</a>
         </li>
-        <li>
-            <a href="{% url 'humans:index' %}">Humans</a>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'humans:index' %}">Humans</a>
         </li>
-        <li>
-            <a href="{% url 'animals:index' %}">Animals</a>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'animals:index' %}">Animals</a>
         </li>
-        <li>
-            <a href="{% url 'session_example:index' %}">Session example</a>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'session_example:index' %}">Session example</a>
         </li>
     </ul>
 </header>

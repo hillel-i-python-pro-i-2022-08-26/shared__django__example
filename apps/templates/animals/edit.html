@@ -1,10 +1,12 @@
 {% extends '_helpers/_base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <div>
         <h2>Animal</h2>
         <form>
-            {{ form }}
+            {# {{ form|crispy }} #}
+            {% crispy form %}
         </form>
     </div>
 {% endblock %}
