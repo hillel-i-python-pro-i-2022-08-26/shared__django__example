@@ -4,10 +4,13 @@
     <div>
         <h2>Animals</h2>
         <ol class="my-custom-list">
-            {% for animal in animals %}
+            {% for animal in object_list %}
                 <li class="my-element-style">
                     <div>
                         <div class="col">
+                            {% if animal.avatar %}
+                                <img class="animal-avatar" src="{{ animal.avatar.url }}" alt="{{ animal.name }}" />
+                            {% endif %}
                             <span>{{ animal.name }}</span>
                             <span> - </span>
                             <span>{{ animal.age }}</span>
