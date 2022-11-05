@@ -165,3 +165,6 @@ db/*
 docker-compose.override.yml
 
 staticfiles/
+
+media/*
+!media/.gitkeep

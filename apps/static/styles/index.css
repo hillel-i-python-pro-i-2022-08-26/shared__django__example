@@ -59,3 +59,7 @@
     flex: 1;
     display: flex;
 }
+
+.animal-avatar {
+    max-width: 3em;
+}

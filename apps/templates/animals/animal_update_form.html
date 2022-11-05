@@ -1,0 +1,15 @@
+{% extends '_helpers/_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div>
+        <h2>Animal</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <button class="btn btn-primary" type="submit">
+                Save
+            </button>
+        </form>
+    </div>
+{% endblock %}

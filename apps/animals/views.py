@@ -1,32 +1,18 @@
-from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.views.generic import UpdateView, ListView
 
-from .forms import AnimalForm
 from .models import Animal
 
 
-def get_animals(request: HttpRequest) -> HttpResponse:
-    animals = Animal.objects.all()
+class ArticleListView(ListView):
+    model = Animal
 
-    return render(
-        request,
-        "animals/index.html",
-        {
-            "animals": animals,
-            "title": "Animals",
-        },
+
+class AnimalUpdateView(UpdateView):
+    model = Animal
+    fields = (
+        "id",
+        "name",
+        "age",
+        "avatar",
     )
-
-
-def edit_animal(request: HttpRequest, pk: int) -> HttpResponse:
-    animal = Animal.objects.get(pk=pk)
-    form = AnimalForm(instance=animal)
-
-    return render(
-        request,
-        "animals/edit.html",
-        {
-            "form": form,
-            "title": "Animals",
-        },
-    )
+    template_name_suffix = "_update_form"
