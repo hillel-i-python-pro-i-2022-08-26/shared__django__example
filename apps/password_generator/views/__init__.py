@@ -1,1 +1,1 @@
-from .generate_password_view import generate_password_view
+from .generate_password_view import GeneratePasswordView
