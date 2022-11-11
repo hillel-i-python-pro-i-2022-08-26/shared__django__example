@@ -1,3 +1,4 @@
+import base64
 import uuid
 
 from django.db import models
@@ -15,9 +16,32 @@ class Group(models.Model):
     __repr__ = __str__
 
 
-def get_icon_path(instance, filename: str) -> str:
+def _generate_pseudo_id(amount_of_iterations: int = 3) -> str:
+    # [validate]-[BEGIN]
+    if amount_of_iterations <= 0:
+        raise ValueError(f'Please provide positive amount of iterations. Current: "{amount_of_iterations}"')
+    # [validate]-[END]
+
+    return (
+        base64.urlsafe_b64encode(b"".join(uuid.uuid4().bytes for _ in range(amount_of_iterations)))
+        .decode()
+        .replace("=", "")
+    )
+
+
+# noinspection PyUnusedLocal
+def get_icon_path(
+    instance,
+    filename: str,
+) -> str:
     _, extension = filename.rsplit(".", maxsplit=1)
-    return f"animals/animal/avatar/{instance.pk}/{uuid.uuid4()}/avatar.{extension}"
+
+    return (
+        f"animals/animal/avatar/"
+        f"{_generate_pseudo_id(amount_of_iterations=1)}/"
+        f"{_generate_pseudo_id(amount_of_iterations=5)}/"
+        f"avatar.{extension}"
+    )
 
 
 class Animal(models.Model):
