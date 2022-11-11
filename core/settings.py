@@ -58,6 +58,7 @@ LOCAL_APPS = [
     "apps.humans.apps.HumansConfig",
     "apps.animals",
     "apps.users",
+    "apps.middleware_example",
 ]
 
 THIRD_PARTY_APPS = [
@@ -78,6 +79,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "apps.middleware_example.middleware.SimpleLoggingMiddleware",
+    "apps.middleware_example.middleware.SimpleLoggingMiddleware2",
 ]
 
 ROOT_URLCONF = "core.urls"
