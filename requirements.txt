@@ -1,8 +1,8 @@
 # Core
-django==4.1.3
+django==4.1.4
 
 # Name generating
-faker==15.2.0
+faker==15.3.4
 
 # For better parsing args from query part from URL
 webargs==8.2.0
@@ -11,13 +11,13 @@ webargs==8.2.0
 # Pre-commit hook.
 pre-commit==2.20.0
 # Upgrade syntax.
-pyupgrade==3.2.0
+pyupgrade==3.3.1
 # Formatter. Apply codestyle.
-black==22.10.0
+black==22.12.0
 # Check codestyle.
-flake8==5.0.4
+flake8==6.0.0
 # Removes unused imports and unused variables.
-autoflake==1.7.7
+autoflake==2.0.0
 # [code_style]-[END]
 
 # For environment variables and config.
@@ -29,4 +29,7 @@ psycopg2-binary==2.9.5
 crispy-bootstrap5==0.7
 
 # For images in django
-pillow==8.4.0
+pillow==9.3.0
+
+celery==5.2.7
+
