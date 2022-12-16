@@ -24,6 +24,7 @@ urlpatterns = [
     path("humans/", include("apps.humans.urls")),
     path("animals/", include("apps.animals.urls")),
     path("sessions-example/", include("apps.sessions_example.urls")),
+    path("celery-example/", include("apps.celery_example.urls")),
     path("", include("apps.base.urls")),
 ]
 
