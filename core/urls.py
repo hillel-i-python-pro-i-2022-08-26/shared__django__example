@@ -18,6 +18,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from apps.users_drf.urls import router
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("password-generator/", include("apps.password_generator.urls")),
@@ -25,6 +27,10 @@ urlpatterns = [
     path("animals/", include("apps.animals.urls")),
     path("sessions-example/", include("apps.sessions_example.urls")),
     path("celery-example/", include("apps.celery_example.urls")),
+    #
+    path("api-auth/", include("rest_framework.urls")),
+    path("api/", include(router.urls)),
+    #
     path("", include("apps.base.urls")),
 ]
 
